@@ -61,7 +61,7 @@ jobs:
           passphrase: ${{ secrets.PWD }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd ~/test_cicd
+            cd $HOME/test_cicd
             docker compose down
             docker pull ghcr.io/vladimir4123/cicdrep:main
-            docker compose up
+            docker compose up -d
