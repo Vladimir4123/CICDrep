@@ -60,4 +60,7 @@ jobs:
           username: yc-user
           passphrase: ${{ secrets.PWD }}
           key: ${{ secrets.SSH_KEY }}
-          script: whoami
+          script:
+            docker-compose pull
+            docker-compose down
+            docker-compose up -d
