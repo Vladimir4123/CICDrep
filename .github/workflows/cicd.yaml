@@ -68,4 +68,3 @@ jobs:
             docker compose down
             docker pull ghcr.io/vladimir4123/cicdrep:main
             docker compose up -d
-    dependencies:
