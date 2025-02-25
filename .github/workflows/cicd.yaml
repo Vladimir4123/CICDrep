@@ -49,11 +49,15 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
+
+  cd:
+    runs-on: ubuntu-latest
+    steps:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.2.1
         with:
           host: ${{ secrets.ADDRESS }}
-          username: linuxserver.io
-          password: ${{ secrets.PWD }}
-          port: ${{ secrets.SSH_KEY }}
+          username: yc-user
+          passphrase: ${{ secrets.PWD }}
+          key: ${{ secrets.SSH_KEY }}
           script: whoami
