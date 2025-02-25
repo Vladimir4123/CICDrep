@@ -50,7 +50,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
 
-  cd:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: executing remote ssh commands using password
