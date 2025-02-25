@@ -50,3 +50,12 @@ jobs:
          push: true
          tags: ${{ steps.meta.outputs.tags }}
          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.2.1
+        with:
+          host: ${{ secrets.ADDRESS }}
+          username: linuxserver.io
+          password: ${{ secrets.PWD }}
+          port: ${{ secrets.SSH_KEY }}
+          script: whoami
